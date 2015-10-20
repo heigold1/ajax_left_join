@@ -16,7 +16,7 @@
 	<div id = "header">  
 		<h1>This page will (1) use jQuery
 
-(2) to make an Ajax request
+(2) to make an Ajax request 
 
 (3) to a PHP script that  
 
@@ -40,7 +40,7 @@
 
 
 <div id ="download_div">
-<a href="task_2.tar.gz">Download files</a>
+<a target="_blank" href="https://github.com/heigold1/ajax_left_join">View files on GitHub</a>
 </div>
 
 

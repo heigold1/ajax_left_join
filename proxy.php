@@ -8,10 +8,10 @@ $password = "brent";
 $hostname = "heigold1.apollomysql.com"; 
 
 //connection to the database
- $dbhandle = mysql_connect($hostname, $username, $password)
+ $dbhandle = mysqli_connect($hostname, $username, $password)
     or die("Unable to connect to MySQL");  
 
- $selected = mysql_select_db("tasks",$dbhandle)
+ $selected = mysqli_select_db($dbhandle, "tasks")
     or die("Could not select tasks");  
 
 // Execute the SQL and bring back the records 
@@ -24,10 +24,10 @@ $hostname = "heigold1.apollomysql.com";
           LEFT JOIN task_2_departments dpt
                   ON emp.dept_id = dpt.dept_id";
 
-  $result = mysql_query($sql) or die(mysql_error());
+  $result = mysqli_query($dbhandle, $sql) or die(mysql_error());
 
   $rows = array();
-  while ($row = mysql_fetch_assoc($result)) 
+  while ($row = mysqli_fetch_assoc($result)) 
   {
     $arr_new_row = array();
      $arr_new_row['first_name'] = $row['first_name'];
